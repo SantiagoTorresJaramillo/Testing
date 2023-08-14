@@ -19,7 +19,7 @@
     "typescript": "^5.1.5"
   },
   "scripts": {
-    "chrome": "cypress run --browser chrome --record --key d02d9cd6-4b4d-4a96-8719-93136b61d6f5",
+    "chrome": "cypress run --browser chrome",
     "format": "prettier --write 'cypress/**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
