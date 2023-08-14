@@ -22,6 +22,8 @@
     "chrome": "cypress run --browser chrome",
     "format": "prettier --write 'cypress/**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc",
     "lint": "eslint . --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browsers": "cypress-browser-chrome cypress-browser-firefox --save-dev"
+
   }
 }
