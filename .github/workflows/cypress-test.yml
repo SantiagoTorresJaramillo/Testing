@@ -8,6 +8,7 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,21 +24,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Set up Chrome
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-
-      - name: Set up Firefox
-        uses: cypress-io/github-action@v2
-        with:
-          browser: firefox
-
-      - name: Set up Edge
-        uses: cypress-io/github-action@v2
-        with:
-          browser: edge
 
       - name: Run Cypress Tests
         run: npx cypress run
