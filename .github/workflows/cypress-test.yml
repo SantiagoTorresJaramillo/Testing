@@ -25,5 +25,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Cypress Tests
-        run: npx cypress run
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v2
+
+      - name: Run Cypress Tests with Chrome
+        run: npx cypress run --browser chrome
