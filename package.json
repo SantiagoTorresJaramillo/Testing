@@ -21,6 +21,7 @@
     "typescript": "^5.1.5"
   },
   "scripts": {
+    "start": "cypress run --browser chrome",
     "chrome": "cypress run --browser chrome",
     "format": "prettier --write 'cypress/**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc",
     "lint": "eslint . --ext .ts",
