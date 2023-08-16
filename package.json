@@ -5,7 +5,9 @@
   "requires": true,
   "author": "",
   "description": "",
-  "keywords": [],
+  "keywords": [ "cypress",
+  "end-to-end",
+  "testing"],
   "license": "ISC",
   "main": "index.js",
   "packages": {},
@@ -14,7 +16,7 @@
     "@typescript-eslint/parser": "^6.2.1",
     "cypress": "^12.17.1",
     "cypress-iframe": "^1.0.1",
-    "eslint": "^8.46.0",
+    "eslint-plugin-cypress": "2.14.0",
     "prettier": "^2.8.8",
     "typescript": "^5.1.5"
   },
@@ -23,7 +25,14 @@
     "format": "prettier --write 'cypress/**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "browsers": "cypress-browser-chrome cypress-browser-firefox --save-dev"
+    "browsers": "cypress-browser-chrome cypress-browser-firefox --save-dev",
+    "testwebapp:spec": "cd ./src/webapp && cypress run --spec",
+    "cypress": "cypress info",
+    "testwebapp:gui": "cypress open --project ./src/webapp",
+    "testwebapp:run": "cypress run --project ./src/webapp",
+    "testwebapp:record": "cypress run --record --key ${PROJECT_RECORD_KEY} --project ./src/webapp",
+    "testslack:gui": "cypress open --project ./src/slack",
+    "testslack:run": "cypress run --project ./src/slack"
 
   }
 }
