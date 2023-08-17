@@ -9,10 +9,32 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      # Define aquí las variables de entorno que necesitas
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      UUID_LOCAL: ${{ secrets.UUID_LOCAL }}
+      UUID_LIVE: ${{ secrets.UUID_LIVE }}
+      UUID_STAGING: ${{ secrets.UUID_STAGING }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           start: npm start
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run Prettier
+        run: npm run prettier-check  # Ajusta el comando según tu configuración
+
+      - name: Run ESLint
+        run: npm run eslint  # Ajusta el comando según tu configuración
+
+      - name: Run Cypress E2E Tests
+        run: npm run cypress-run  # Ajusta el comando según tu configuración
+      
+      # Añade más pasos según tus necesidades, como construir y desplegar
