@@ -1,5 +1,4 @@
 const email = Cypress.env('EMAIL')
-const password = Cypress.env('PASSWORD')
 
 describe('User Onboarding', () => {
   it('can navigate to the site', () => {
