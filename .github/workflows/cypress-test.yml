@@ -10,7 +10,6 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     env:
-      # Define aquí las variables de entorno que necesitas
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
       UUID_LOCAL: ${{ secrets.UUID_LOCAL }}
