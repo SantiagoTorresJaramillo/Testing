@@ -35,6 +35,6 @@ jobs:
         run: npm run lint  # Ajusta el comando según tu configuración
 
       - name: Run Cypress E2E Tests
-        run: npm run cypress-run  # Ajusta el comando según tu configuración
+        run: npm run chrome  # Ajusta el comando según tu configuración
       
       # Añade más pasos según tus necesidades, como construir y desplegar
