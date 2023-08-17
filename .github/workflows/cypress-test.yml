@@ -14,9 +14,7 @@ jobs:
       URL: ${{ secrets.URL }}
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
-      UUID_LOCAL: ${{ secrets.UUID_LOCAL }}
-      UUID_LIVE: ${{ secrets.UUID_LIVE }}
-      UUID_STAGING: ${{ secrets.UUID_STAGING }}
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v3
