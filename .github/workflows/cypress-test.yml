@@ -9,7 +9,9 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    environment: Staging
     env:
+      URL: ${{ secrets.URL }}
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
       UUID_LOCAL: ${{ secrets.UUID_LOCAL }}

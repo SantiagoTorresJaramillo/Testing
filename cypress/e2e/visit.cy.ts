@@ -8,8 +8,6 @@ describe('User Onboarding', () => {
     cy.visit('https://app.dailybot.com/')
       .contains('Log in')
       .should('be.visible')
-      
-    cy.log(email)
-    cy.log(password)
+    cy.get('#input-email').type(email)
   })
 })
