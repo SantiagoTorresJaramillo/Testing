@@ -11,9 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Staging
     env:
-      URL: ${{ secrets.URL }}
-      EMAIL: ${{ secrets.EMAIL }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      EMAIL: ${{ secrets.CREDENTIALS.EMAIL }}
 
     steps:
       - name: Checkout
