@@ -25,6 +25,9 @@
   "scripts": {
     "start": "cypress run --browser chrome",
     "chrome": "cypress run --browser chrome",
+    "firefox": "cypress run --browser firefox",
+    "edge": "cypress run --browser edge",
+    "electron": "cypress run --browser electron",
     "format": "prettier --write 'cypress/**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",

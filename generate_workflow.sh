@@ -1,3 +1,13 @@
+#!/bin/bash
+
+
+# Specify the environment variable for the current environment (Staging, Local or Live)
+environment_variable="Staging"
+
+yaml_file=".github/workflows/${environment_variable}_e2e-tests.yml"
+# Define the contents of the YAML file
+
+yaml_contents=$(cat <<-EOM
 name: e2e-tests
 on:
   push:
@@ -6,14 +16,12 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
-    
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    environment: Staging
+    environment: $environment_variable
     env:
-      EMAIL: ${{ secrets.CREDENTIALS.EMAIL }}
+      EMAIL: \${{ secrets.CREDENTIALS.EMAIL }}
 
     steps:
       - name: Checkout
@@ -21,12 +29,7 @@ jobs:
 
       - name: Write the cypress.env.json file 📝
         run: |
-          echo '${{ secrets.CREDENTIALS }}' > cypress.env.json 
-
-      # - name: Cypress run
-      #   uses: cypress-io/github-action@v5
-      #   with:
-      #     start: npm start
+          echo '\${{ secrets.CREDENTIALS }}' > cypress.env.json 
 
       - name: Install dependencies
         run: npm install
@@ -41,3 +44,10 @@ jobs:
         run: npm run chrome  
       
       # Añade más pasos según tus necesidades, como construir y desplegar
+EOM
+)
+
+# Write the contents to the YAML file
+echo "$yaml_contents" > "$yaml_file"
+
+echo "Workflow YAML file created at $yaml_file"
